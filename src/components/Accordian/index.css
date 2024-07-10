@@ -1,0 +1,20 @@
+.acc-container {
+  cursor: pointer;
+  padding: 5px;
+  margin: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  background-color: #e1e1e1;
+  width: 500px;
+  position: relative;
+}
+
+.drop-btn {
+  outline: none;
+  border: none;
+  background-color: black;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 10px;
+}
