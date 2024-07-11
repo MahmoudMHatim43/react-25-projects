@@ -8,12 +8,15 @@ export default function Accordian() {
   const [mode, setmode] = useState(false);
 
   function handleClick(id) {
-    mode
-      ? multi.includes(id)
+    if (mode) {
+      setSelect(null);
+      multi.includes(id)
         ? setmulti(multi.filter((element) => element !== id))
-        : setmulti([...multi, id])
-      : setmulti([]);
-    id === select ? setSelect(null) : setSelect(id);
+        : setmulti([...multi, id]);
+    } else {
+      setmulti([]);
+      id === select ? setSelect(null) : setSelect(id);
+    }
   }
 
   return (
@@ -24,11 +27,7 @@ export default function Accordian() {
           return (
             <div className="acc-container" onClick={() => handleClick(item.id)}>
               <h2>{item.title}</h2>
-              {select == item.id || multi.includes(item.id) ? (
-                <p>{item.content}</p>
-              ) : (
-                <></>
-              )}
+              {select == item.id || multi.includes(item.id) ? <p>{item.content}</p> : <></>}
             </div>
           );
         })
