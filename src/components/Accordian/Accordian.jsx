@@ -1,6 +1,6 @@
 import { Data } from "./Data";
 import { useState } from "react";
-import "./index.css";
+import "./accordian.css";
 
 export default function Accordian() {
   const [select, setSelect] = useState(null);
@@ -10,9 +10,7 @@ export default function Accordian() {
   function handleClick(id) {
     if (mode) {
       setSelect(null);
-      multi.includes(id)
-        ? setmulti(multi.filter((element) => element !== id))
-        : setmulti([...multi, id]);
+      multi.includes(id) ? setmulti(multi.filter((element) => element !== id)) : setmulti([...multi, id]);
     } else {
       setmulti([]);
       id === select ? setSelect(null) : setSelect(id);
@@ -21,7 +19,9 @@ export default function Accordian() {
 
   return (
     <>
-      <button onClick={() => setmode(!mode)}>Enable Multi Select</button>
+      <button onClick={() => setmode(!mode)} className="acc-btn">
+        Enable Multi Select
+      </button>
       {Data && Data.length > 0 ? (
         Data.map((item) => {
           return (
