@@ -4,10 +4,11 @@ import RandomColor from "./components/RandomColor/RandomColor";
 import StarRating from "./components/StarRating/StarRating";
 import ImageSlider from "./components/ImageSlider/ImageSlider";
 import LoadMoreData from "./components/LoadMoreData/LoadMoreData";
+import TreeView from "./components/TreeView/TreeView";
 function App() {
   return (
     <div className="app-container">
-      <LoadMoreData url={"https://dummyjson.com/products?limit=15&"} />
+      <TreeView />
     </div>
   );
 }

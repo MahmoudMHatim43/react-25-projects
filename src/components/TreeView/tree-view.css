@@ -1,0 +1,18 @@
+.tree-view-container {
+  color: black;
+  background-color: #e1e1e1;
+  width: 300px;
+  height: 100vh;
+  text-align: start;
+  padding: 50px 0 0 50px;
+  margin: 0 auto 0 0;
+}
+
+.tree-view-li {
+  font-size: 16px;
+  padding: 0px 0px 0px 20px;
+}
+.tree-view-ul {
+  font-size: 18px;
+  list-style: none;
+}
