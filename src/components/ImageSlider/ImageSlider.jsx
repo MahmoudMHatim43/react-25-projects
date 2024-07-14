@@ -11,10 +11,9 @@ export default function ImageSlider({ url, limit }) {
   const [errorMessage, setErrorMessage] = useState(null);
   useEffect(() => {
     if (url !== "") getImages(url, limit);
-  }, [url]);
+  }, [url]); // when the url change fetch data again
 
   // fecth the images function:
-
   async function getImages(url, limit) {
     try {
       setLoading(true);
@@ -46,7 +45,6 @@ export default function ImageSlider({ url, limit }) {
     }
   }
   // return cases:
-
   if (loading) {
     return <h1>Loading..</h1>;
   }
