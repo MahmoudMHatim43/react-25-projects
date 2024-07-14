@@ -7,11 +7,11 @@ import LoadMoreData from "./components/LoadMoreData/LoadMoreData";
 import TreeView from "./components/TreeView/TreeView";
 import QrCodeGenerator from "./components/QrCode/QrCode";
 import LightDarkMode from "./components/LightDarkMode/LightDarkMode";
-
+import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
 function App() {
   return (
     <div className="app-container">
-      <LightDarkMode />
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
     </div>
   );
 }

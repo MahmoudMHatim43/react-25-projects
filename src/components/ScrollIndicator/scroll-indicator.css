@@ -1,0 +1,20 @@
+.scroll-indicator-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+
+  padding: 50px;
+  gap: 20px;
+  font-size: 20px;
+  background: linear-gradient(to bottom, #ccc, #fff);
+}
+.the-scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  height: 5px;
+  width: 0%;
+  border-bottom: 1px solid red;
+}
