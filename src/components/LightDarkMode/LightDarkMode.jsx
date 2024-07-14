@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useLocalStorage from "./UseLocalStorage";
 import "./light-dark-mode.css";
 const LightDarkMode = () => {
