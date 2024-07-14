@@ -6,11 +6,12 @@ import ImageSlider from "./components/ImageSlider/ImageSlider";
 import LoadMoreData from "./components/LoadMoreData/LoadMoreData";
 import TreeView from "./components/TreeView/TreeView";
 import QrCodeGenerator from "./components/QrCode/QrCode";
+import LightDarkMode from "./components/LightDarkMode/LightDarkMode";
 
 function App() {
   return (
     <div className="app-container">
-      <QrCodeGenerator />
+      <LightDarkMode />
     </div>
   );
 }
