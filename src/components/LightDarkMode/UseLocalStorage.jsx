@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 const useLocalStorage = (key, defaultValue) => {
-  // defaultValue will be passed as a prop
   const [value, setValue] = useState(() => {
     let curr;
     try {
-      curr = JSON.parse(localStorage.getItem(key) || String(defaultValue)); // get from local storage
+      curr = JSON.parse(localStorage.getItem(key) || String(defaultValue));
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
       curr = defaultValue;
     }
     return curr;
   });
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value)); // set on local storage
+    localStorage.setItem(key, value);
   }, [key, value]);
   return [value, setValue];
 };
