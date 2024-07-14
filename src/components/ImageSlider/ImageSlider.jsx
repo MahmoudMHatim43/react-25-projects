@@ -15,6 +15,7 @@ export default function ImageSlider({ url, limit }) {
 
   // fecth the images function:
   async function getImages(url, limit) {
+    // the API url => "https://dummyjson.com/products?limit=100"
     try {
       setLoading(true);
       const promise = await fetch(url + limit);
@@ -67,7 +68,9 @@ export default function ImageSlider({ url, limit }) {
       </button>
       <div className="images">
         {images.map((image) => {
-          return <div style={{ backgroundImage: `url(${image.download_url})` }} key={image.id}></div>;
+          return (
+            <div style={{ backgroundImage: `url(${image.download_url})` }} key={image.id}></div>
+          );
         })}
       </div>
       <button

@@ -1,0 +1,19 @@
+.tabs-container {
+  background-image: linear-gradient(to bottom, #b1b1b1, #fff);
+  width: 100vw;
+  height: 100vh;
+}
+.tabs-header {
+  padding: 20px;
+}
+.tabs-header button {
+  border-radius: 25px;
+  margin: 5px;
+  font-size: 18px;
+  padding: 5px 20px;
+  background-color: orange;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

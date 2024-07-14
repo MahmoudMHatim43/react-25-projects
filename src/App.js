@@ -8,10 +8,11 @@ import TreeView from "./components/TreeView/TreeView";
 import QrCodeGenerator from "./components/QrCode/QrCode";
 import LightDarkMode from "./components/LightDarkMode/LightDarkMode";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
+import Tab from "./components/TabsChanger/Tab";
 function App() {
   return (
     <div className="app-container">
-      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+      <Tab />
     </div>
   );
 }

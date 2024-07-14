@@ -12,6 +12,7 @@ function LoadMoreData({ url }) {
   }, [count]);
   // fetch products function:
   async function getProducts(url) {
+    // the API url => "https://dummyjson.com/products?limit=100"
     try {
       setLoading(true);
       const promise = await fetch(url + `skip=${count === 0 ? 0 : count * 15}`);
