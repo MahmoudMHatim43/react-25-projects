@@ -10,11 +10,12 @@ import LightDarkMode from "./components/LightDarkMode/LightDarkMode";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
 import Tab from "./components/TabsChanger/Tab";
 import ModalTest from "./components/Modal/ModalTest";
-import GithubUserFinder from "./GitHubUserFinder/GithubUserFinder";
+import GithubUserFinder from "./components/GitHubUserFinder/GithubUserFinder";
+import FilterSearch from "./components/FilterSearch/FilterSearch";
 function App() {
   return (
     <div className="app-container">
-      <GithubUserFinder url={"https://api.github.com/users/"} />
+      <FilterSearch url={"https://dummyjson.com/users"} />
     </div>
   );
 }
