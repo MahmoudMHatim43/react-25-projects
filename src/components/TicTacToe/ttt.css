@@ -24,9 +24,9 @@
 .ttt-cell {
   outline: none;
   cursor: pointer;
-  background-color: #3d3d3d;
+  background-color: #ababab;
   opacity: 0.8;
-  font-size: 30px;
+  font-size: 50px;
   border: 1px solid black;
   width: calc(400px / 3);
   height: calc(400px / 3);

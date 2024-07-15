@@ -9,6 +9,7 @@ const Square = ({ pass, id }) => {
   }
   return (
     <button
+      style={{ color: squares[id] == "X" ? "red" : squares[id] == "O" ? "darkblue" : "#ababab" }}
       className="ttt-cell"
       onClick={(e) => {
         choosePlayer(e);
