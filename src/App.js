@@ -9,10 +9,11 @@ import QrCodeGenerator from "./components/QrCode/QrCode";
 import LightDarkMode from "./components/LightDarkMode/LightDarkMode";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
 import Tab from "./components/TabsChanger/Tab";
+import ModalTest from "./components/Modal/ModalTest.jsx";
 function App() {
   return (
     <div className="app-container">
-      <Tab />
+      <ModalTest />
     </div>
   );
 }
