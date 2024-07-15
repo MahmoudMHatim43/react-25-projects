@@ -1,33 +1,15 @@
 import "./github-user.css";
+import Profile from "./Profile";
+import Connections from "./Connections";
+import Links from "./Links";
 const User = ({ data }) => {
+  const { avatar_url, followers, following, public_repos, html_url, id, bio, name } = data;
   return (
-    <>
-      <div className="github-user-details" key={data.id}>
-        <div className="github-user-profile">
-          <img src={data.avatar_url} alt={data.login} />
-          <h2>{data.name}</h2>
-        </div>
-        <div className="github-user-follow-info">
-          <div className="followers">
-            <h3>Followers</h3>
-            <h4>{data.followers}</h4>
-          </div>
-          <div className="following">
-            <h3>Followers</h3>
-            <h4>{data.following}</h4>
-          </div>
-          <div className="repos">
-            <h3>Public Repos</h3>
-            <h4>{data.public_repos}</h4>
-          </div>
-        </div>
-        <div className="github-user-bio">{data.bio}</div>
-        <div className="github-user-repos"></div>
-        <div className="github-user-account-link">
-          <a href={data.html_url}>Go To Account</a>
-        </div>
-      </div>{" "}
-    </>
+    <div className="github-user-details" key={id}>
+      <Profile avatar={avatar_url} name={name} bio={bio} />
+      <Connections followers={followers} following={following} repos={public_repos} />
+      <Links link={html_url} />
+    </div>
   );
 };
 
