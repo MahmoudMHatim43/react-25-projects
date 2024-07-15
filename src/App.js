@@ -9,11 +9,12 @@ import QrCodeGenerator from "./components/QrCode/QrCode";
 import LightDarkMode from "./components/LightDarkMode/LightDarkMode";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
 import Tab from "./components/TabsChanger/Tab";
-import ModalTest from "./components/Modal/ModalTest.jsx";
+import ModalTest from "./components/Modal/ModalTest";
+import GithubUserFinder from "./GitHubUserFinder/GithubUserFinder";
 function App() {
   return (
     <div className="app-container">
-      <ModalTest />
+      <GithubUserFinder url={"https://api.github.com/users/"} />
     </div>
   );
 }
