@@ -12,10 +12,11 @@ import Tab from "./components/TabsChanger/Tab";
 import ModalTest from "./components/Modal/ModalTest";
 import GithubUserFinder from "./components/GitHubUserFinder/GithubUserFinder";
 import FilterSearch from "./components/FilterSearch/FilterSearch";
+import TicTacToe from "./components/TicTacToe/TicTacToe";
 function App() {
   return (
     <div className="app-container">
-      <FilterSearch url={"https://dummyjson.com/users"} />
+      <TicTacToe />
     </div>
   );
 }

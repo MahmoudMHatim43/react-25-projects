@@ -16,6 +16,6 @@
   border-radius: 20px;
 }
 
-button:active {
+.acc-btn:active {
   transform: scale(0.98);
 }
