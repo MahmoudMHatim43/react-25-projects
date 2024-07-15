@@ -37,7 +37,7 @@
   border: none;
   font-size: 25px;
   padding: 5px 20px;
-  margin: 50px;
+  margin: 50px auto;
 }
 .custom-modal-show-button:active {
   transform: scale(0.99);

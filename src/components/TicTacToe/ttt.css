@@ -4,7 +4,7 @@
   max-width: 400px;
   max-height: 400px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin: 100px auto;
 }
 .ttt-header h1 {
   background-color: transparent;

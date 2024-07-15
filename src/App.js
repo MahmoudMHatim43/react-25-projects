@@ -1,4 +1,5 @@
 import "./App.css";
+/////////////////////////////////////////////////////////////////////
 import Accordian from "./components/Accordian/Accordian";
 import RandomColor from "./components/RandomColor/RandomColor";
 import StarRating from "./components/StarRating/StarRating";
@@ -13,10 +14,16 @@ import ModalTest from "./components/Modal/ModalTest";
 import GithubUserFinder from "./components/GitHubUserFinder/GithubUserFinder";
 import FilterSearch from "./components/FilterSearch/FilterSearch";
 import TicTacToe from "./components/TicTacToe/TicTacToe";
+////////////////////////////////////////////////////////////////////
+import FeatureFlagGlobalState from "./components/FeatureFlag/Context";
+import FeatureFlag from "./components/FeatureFlag/FeatureFlag";
+
 function App() {
   return (
     <div className="app-container">
-      <TicTacToe />
+      <FeatureFlagGlobalState>
+        <FeatureFlag />
+      </FeatureFlagGlobalState>
     </div>
   );
 }

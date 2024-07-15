@@ -9,19 +9,22 @@ export default function StarRating({ stars = 5 }) {
     setRating(index);
   }
   return (
-    <div className="stars-container">
-      {[...Array(stars)].map((star, index) => (
-        <FaStar
-          key={index}
-          onMouseEnter={() => (done ? "" : rate(index + 1))}
-          onMouseLeave={() => (done ? "" : rate(0))}
-          onClick={() => {
-            rate(index + 1);
-            setdone(!done);
-          }}
-          className={rating > index ? "yellow-star" : ""}
-        />
-      ))}
-    </div>
+    <>
+      <h1>Rate Us</h1>
+      <div className="stars-container">
+        {[...Array(stars)].map((star, index) => (
+          <FaStar
+            key={index}
+            onMouseEnter={() => (done ? "" : rate(index + 1))}
+            onMouseLeave={() => (done ? "" : rate(0))}
+            onClick={() => {
+              rate(index + 1);
+              setdone(!done);
+            }}
+            className={rating > index ? "yellow-star" : ""}
+          />
+        ))}
+      </div>
+    </>
   );
 }

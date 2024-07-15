@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import "./image-slider.css";
-import { SiNuke } from "react-icons/si";
 export default function ImageSlider({ url, limit }) {
   // hooks:
 

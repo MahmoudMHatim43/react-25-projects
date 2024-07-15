@@ -1,12 +1,14 @@
 .stars-container {
   display: flex;
-
-  margin: 50px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
   font-size: 30px;
   background-color: rgb(150, 150, 150);
   padding: 10px 50px;
   border-radius: 15px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  width: 20%;
 }
 .yellow-star {
   color: yellow;
