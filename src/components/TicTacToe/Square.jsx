@@ -1,8 +1,12 @@
 const Square = ({ pass, id }) => {
-  const { squares, setSquares, player, setPlayer } = pass;
+  const { squares, setSquares, player, setPlayer, xs, os, setXs, setOs } = pass;
   function choosePlayer(event) {
     if (event.target.innerText === ".") {
       event.target.innerText = player ? "X" : "O";
+      if (xs.length < 4 || os.length < 4) {
+        player ? setXs([...xs, id]) : setOs([...os, id]);
+      }
+
       setSquares(squares.map((item, index) => (index === id ? (player ? "X" : "O") : item)));
       setPlayer(!player);
     }
@@ -15,7 +19,7 @@ const Square = ({ pass, id }) => {
         choosePlayer(e);
       }}
     >
-      .
+      {squares[id]}
     </button>
   );
 };
