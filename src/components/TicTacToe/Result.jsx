@@ -1,7 +1,7 @@
-const Result = ({ player, tie }) => {
+const Result = ({ player }) => {
   return (
     <>
-      <h1 className="ttt-winner">{tie ? "Tie!" : player ? "O Wins!" : "X Wins!"}</h1>
+      <h1 className="ttt-winner">{player ? "O Wins!" : "X Wins!"}</h1>
     </>
   );
 };
