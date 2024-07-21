@@ -9,7 +9,6 @@ const TicTacToe = () => {
   const [player, setPlayer] = useState(true);
   const [win, setWin] = useState(null);
   const [tie, setTie] = useState(false);
-  // console.log(os);
   useEffect(() => {
     winner();
   }, [squares]);
