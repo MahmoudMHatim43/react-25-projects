@@ -22,11 +22,12 @@ import {
   WindowSizeHookTest,
 } from "./components/CustomHooks/test";
 import ScrollJump from "./components/ScrollToTopOrBottom/ScrollJump";
+import WeatherApp from "./components/WeatherApp/WeatherApp";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function App() {
   return (
     <div className="app-container">
-      <ScrollJump />
+      <WeatherApp />
     </div>
   );
 }
