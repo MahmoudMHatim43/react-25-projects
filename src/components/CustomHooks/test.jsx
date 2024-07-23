@@ -1,9 +1,11 @@
-import { useFetch, useOnClickOutside } from ".";
+import { useFetch, useOnClickOutside, useWindowResize } from ".";
 import { useRef, useState } from "react";
 import "./test.css";
 export function UseFetchHookTest() {
-  const { data, pending, errMsg } = useFetch("https://dummyjson.com/products", {});
-  //   console.log(data.products); why this cause err while line 13 doesn't ? data is initially set to null an I was trying to access it
+  const { data, pending, errMsg } = useFetch(
+    "https://dummyjson.com/products",
+    {}
+  );
   return (
     <div className="test-fetch-custom-hook-container">
       <h2>
@@ -23,7 +25,6 @@ export function ClickOutsideHookTest() {
   const [show, setShow] = useState(false);
   const ref = useRef();
   useOnClickOutside(ref, () => {
-    console.log("GOD!");
     setShow(false);
   });
 
@@ -32,17 +33,29 @@ export function ClickOutsideHookTest() {
       {show ? (
         <div ref={ref}>
           <h1>This is a Modal</h1>
-          <p>Click outside this content border to close it, If you click inside it won't close</p>
+          <p>
+            Click outside this content border to close it, If you click inside
+            it won't close
+          </p>
         </div>
       ) : (
         <button
           onClick={() => {
             setShow(true);
-          }}
-        >
+          }}>
           Click to Show content
         </button>
       )}
+    </div>
+  );
+}
+
+export function WindowSizeHookTest() {
+  const { w, h } = useWindowResize();
+  return (
+    <div>
+      <h1>Width: {w}</h1>
+      <h1>Hieght: {h}</h1>
     </div>
   );
 }

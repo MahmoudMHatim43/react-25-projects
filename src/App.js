@@ -14,15 +14,20 @@ import ModalTest from "./components/Modal/ModalTest";
 import GithubUserFinder from "./components/GitHubUserFinder/GithubUserFinder";
 import FilterSearch from "./components/FilterSearch/FilterSearch";
 import TicTacToe from "./components/TicTacToe/TicTacToe";
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import FeatureFlagGlobalState from "./components/FeatureFlag/Context";
 import FeatureFlag from "./components/FeatureFlag/FeatureFlag";
-import { UseFetchHookTest, ClickOutsideHookTest } from "./components/CustomHooks/test";
+import {
+  UseFetchHookTest,
+  ClickOutsideHookTest,
+  WindowSizeHookTest,
+} from "./components/CustomHooks/test";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function App() {
   return (
     <div className="app-container">
-      {/* <UseFetchHookTest />
-      <ClickOutsideHookTest /> */}
+      <UseFetchHookTest />
+      <ClickOutsideHookTest />
+      <WindowSizeHookTest />
     </div>
   );
 }

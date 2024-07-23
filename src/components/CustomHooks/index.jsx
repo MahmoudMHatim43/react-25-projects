@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export const useFetch = (url, options = {}) => {
   const [pending, setPending] = useState(false);
@@ -29,16 +29,33 @@ export const useOnClickOutside = (refrence, handler) => {
     if (!refrence.current || refrence.current.contains(event.target)) {
       return;
     } else {
-      handler(event);
+      handler();
     }
   }
   useEffect(() => {
-    document.addEventListener("mousedown", listener);
-    document.addEventListener("touchstart", listener);
+    document.addEventListener("mousedown", listener); // desktop
+    document.addEventListener("touchstart", listener); // mobile
     return () => {
       // remove event listeners when this component will unmount
       document.removeEventListener("mousedown", listener);
       document.removeEventListener("touchstart", listener);
     };
   }, [refrence, handler]);
+};
+export const useWindowResize = () => {
+  const [size, setSize] = useState({ w: 0, h: 0 });
+
+  function handleResize() {
+    setSize({ w: window.innerWidth, h: window.innerHeight });
+  }
+
+  useLayoutEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    console.log(size);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  return size;
 };
