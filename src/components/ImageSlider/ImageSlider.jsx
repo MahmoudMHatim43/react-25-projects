@@ -33,14 +33,18 @@ export default function ImageSlider({ url, limit }) {
     const slider = document.querySelector(".images");
     switch (direction) {
       case "right":
-        slide == 9 ? (slider.style.left = `0%`) : (slider.style.left = `-${(slide + 1) * 100}%`);
+        slide == 9
+          ? (slider.style.left = `0%`)
+          : (slider.style.left = `-${(slide + 1) * 100}%`);
         slide == 9 ? setSlide(0) : setSlide((prevSlide) => prevSlide + 1);
         break;
       case "left":
         slide == 0
           ? (slider.style.left = `-${(images.length - 1) * 100}%`)
           : (slider.style.left = `-${(slide - 1) * 100}%`);
-        slide == 0 ? setSlide(images.length - 1) : setSlide((prevSlide) => prevSlide - 1);
+        slide == 0
+          ? setSlide(images.length - 1)
+          : setSlide((prevSlide) => prevSlide - 1);
         break;
     }
   }
@@ -56,19 +60,20 @@ export default function ImageSlider({ url, limit }) {
     );
   }
   return (
-    <div className="container">
+    <div className="image-slider-container">
       <button
         className="right"
         onClick={() => {
           slideImage("right", slide);
-        }}
-      >
+        }}>
         <FaArrowAltCircleRight />
       </button>
       <div className="images">
         {images.map((image) => {
           return (
-            <div style={{ backgroundImage: `url(${image.download_url})` }} key={image.id}></div>
+            <div
+              style={{ backgroundImage: `url(${image.download_url})` }}
+              key={image.id}></div>
           );
         })}
       </div>
@@ -76,8 +81,7 @@ export default function ImageSlider({ url, limit }) {
         className="left"
         onClick={() => {
           slideImage("left", slide);
-        }}
-      >
+        }}>
         <FaArrowAltCircleLeft />
       </button>
     </div>

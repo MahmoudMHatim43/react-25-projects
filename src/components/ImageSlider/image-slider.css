@@ -1,4 +1,4 @@
-.container {
+.image-slider-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,8 +11,8 @@
 
   position: relative;
 }
-.container button.left,
-.container button.right {
+.image-slider-container button.left,
+.image-slider-container button.right {
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -26,7 +26,7 @@
   transform: translateX(-10%) translateY(-50%);
   z-index: 2;
 }
-.container button.right {
+.image-slider-container button.right {
   left: 100%;
   transform: translateX(-90%) translateY(-50%);
 }
