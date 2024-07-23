@@ -21,13 +21,12 @@ import {
   ClickOutsideHookTest,
   WindowSizeHookTest,
 } from "./components/CustomHooks/test";
+import ScrollJump from "./components/ScrollToTopOrBottom/ScrollJump";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function App() {
   return (
     <div className="app-container">
-      <UseFetchHookTest />
-      <ClickOutsideHookTest />
-      <WindowSizeHookTest />
+      <ScrollJump />
     </div>
   );
 }
