@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { RecipeContext } from "../Context/Context";
 
 function List({ data }) {
+  const { addFav, favourites } = useContext(RecipeContext);
+
   return (
     <div className="flex flex-col gap-3">
       <span className="text-lg text-cyan-800 font-medium text-center">
@@ -8,8 +11,14 @@ function List({ data }) {
       </span>
       <h3 className="text-center text-black">{data.title}</h3>
       <div>
-        <button className="p-3 text-sm px-8 rounded-lg uppercase font-medium tracking-wider inline-block shadow-md bg-black text-white">
-          Save As 💝
+        <button
+          onClick={() => {
+            addFav(data);
+          }}
+          className="p-3 text-sm px-8 rounded-lg uppercase font-medium tracking-wider inline-block shadow-md bg-black text-white">
+          {favourites.includes(data)
+            ? "You Liked This! 💝"
+            : "Add to favourites"}
         </button>
       </div>
       <div>

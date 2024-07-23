@@ -8,6 +8,7 @@ function Details() {
   const [err, setErr] = useState(null);
   const { id } = useParams();
   const { recipeDetails, setRecipeDetails } = useContext(RecipeContext);
+  console.log(recipeDetails);
   async function getDetails() {
     try {
       setLoad(true);
