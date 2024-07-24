@@ -32,11 +32,7 @@ import Navbar from "./components/RecipeApp/Nav/Navbar";
 import Favourites from "./components/RecipeApp/Fav/Favourites";
 import Details from "./components/RecipeApp/Details/Details";
 import { GlobalRecipeState } from "./components/RecipeApp/Context/Context";
-//
-function App() {
-  return (
-    <div className="app-container">
-      <GlobalRecipeState>
+/* <GlobalRecipeState>
         <div className="min-h-screen p-6 bg-white text-gray-600 text-lg">
           <Navbar />
           <Routes>
@@ -45,7 +41,21 @@ function App() {
             <Route path="/item/:id" element={<Details />} />
           </Routes>
         </div>
-      </GlobalRecipeState>
+      </GlobalRecipeState> */
+//
+// ShopCart App:
+import CartNavbar from "./components/ShopCartApp/Components/Navbar";
+import CartHome from "./components/ShopCartApp/Pages/Home";
+import Cart from "./components/ShopCartApp/Pages/Cart";
+//
+function App() {
+  return (
+    <div className="app-container">
+      <CartNavbar />
+      <Routes>
+        <Route path="/" element={<CartHome />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
