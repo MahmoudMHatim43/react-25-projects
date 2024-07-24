@@ -1,11 +1,15 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../Store/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../Store/slices/cartSlice";
 
 function ProductBox({ data }) {
   const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state);
   function addItem() {
     dispatch(addToCart(data));
+  }
+  function removeItem() {
+    dispatch(removeFromCart(data.id));
   }
   const rateColor =
     data.rating.rate < 3
@@ -25,9 +29,13 @@ function ProductBox({ data }) {
       <div className=" flex flex-col justify-between gap-2 p-2 bg-blue-900 text-white text-md w-full h-full">
         <span>{data.title}</span>
         <button
-          onClick={addItem}
+          onClick={
+            cart.some((item) => item.id === data.id) ? removeItem : addItem
+          }
           className="bg-black text-white p-3 rounded-lg">
-          Add to cart
+          {cart.some((item) => item.id === data.id)
+            ? "Remove From cart"
+            : "Add To cart"}
         </button>
         <span
           className={`absolute top-2 right-2 text-white rounded-xl p-2 text-md
