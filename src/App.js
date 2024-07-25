@@ -32,7 +32,7 @@ import Navbar from "./components/RecipeApp/Nav/Navbar";
 import Favourites from "./components/RecipeApp/Fav/Favourites";
 import Details from "./components/RecipeApp/Details/Details";
 import { GlobalRecipeState } from "./components/RecipeApp/Context/Context";
-/* <GlobalRecipeState>
+/*    <GlobalRecipeState>
         <div className="min-h-screen p-6 bg-white text-gray-600 text-lg">
           <Navbar />
           <Routes>
@@ -43,19 +43,46 @@ import { GlobalRecipeState } from "./components/RecipeApp/Context/Context";
         </div>
       </GlobalRecipeState> */
 //
-// ShopCart App:
+// ShopCart App using Redux:
 import CartNavbar from "./components/ShopCartApp/Components/Navbar";
 import CartHome from "./components/ShopCartApp/Pages/Home";
 import Cart from "./components/ShopCartApp/Pages/Cart";
-//
-function App() {
-  return (
-    <div className="app-container">
+/*
       <CartNavbar />
       <Routes>
         <Route path="/" element={<CartHome />} />
         <Route path="/cart" element={<Cart />} />
-      </Routes>
+      </Routes> */
+//
+// Expense Tracker App:
+import { Box, ChakraProvider, Flex } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
+import Main from "./components/ExpesneTracker/Main/Main";
+import theme from "./theme";
+import ExpenseProvider from "./components/ExpesneTracker/Context/ExpenseGlobalState";
+/* */
+//
+function App() {
+  return (
+    <div className="app-container">
+      <ExpenseProvider>
+        <ChakraProvider theme={theme}>
+          <Container
+            bg={"#f8fafd"}
+            maxW={"container.3xl"}
+            height={"100vh"}
+            padding={"0"}>
+            <Flex height={"full"}>
+              <Box
+                height={"full"}
+                flex={"5"}
+                w={["20%", "30%", "20%", "50%", "60%"]}>
+                <Main />
+              </Box>
+            </Flex>
+          </Container>
+        </ChakraProvider>
+      </ExpenseProvider>
     </div>
   );
 }
