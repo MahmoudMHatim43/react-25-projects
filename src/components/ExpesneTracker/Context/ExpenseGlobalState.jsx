@@ -1,10 +1,11 @@
 import { createContext } from "react";
-
-const ExpenseGlobalContext = createContext(null);
+import { useDisclosure } from "@chakra-ui/react";
+export const ExpenseGlobalContext = createContext(null);
 
 function ExpenseProvider({ children }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <ExpenseGlobalContext.Provider value={"none"}>
+    <ExpenseGlobalContext.Provider value={{ isOpen, onOpen, onClose }}>
       {children}
     </ExpenseGlobalContext.Provider>
   );

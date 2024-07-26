@@ -11,14 +11,16 @@ import {
   ModalHeader,
   ModalOverlay,
   RadioGroup,
+  Radio,
   Stack,
 } from "@chakra-ui/react";
 import React from "react";
-import { Radio } from "react-loader-spinner";
+import { ExpenseGlobalContext } from "../Context/ExpenseGlobalState";
 
 function AddTransaction() {
+  const { isOpen, onClose } = React.useContext(ExpenseGlobalContext);
   return (
-    <Modal>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <form>
         <ModalOverlay />
         <ModalContent>
@@ -53,12 +55,12 @@ function AddTransaction() {
             </RadioGroup>
           </ModalBody>
           <ModalFooter>
-            <Button>PUSH</Button>
+            <Button>Send</Button>
+            <Button onClick={onClose}>Cancle</Button>
           </ModalFooter>
         </ModalContent>
       </form>
     </Modal>
   );
 }
-
 export default AddTransaction;

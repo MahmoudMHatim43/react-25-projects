@@ -1,5 +1,6 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import AddTransaction from "../Transaction/AddTransaction";
 
 function TopView() {
   return (
@@ -22,6 +23,7 @@ function TopView() {
         </Flex>
         <Box flex="2">Chart</Box>
       </Flex>
+      <AddTransaction />
     </Box>
   );
 }
